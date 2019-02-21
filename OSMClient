@@ -1,1 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script>
+function getOSMData() {
+ var url = createOsmURL();
+ fetch(url)
+  .then(status)
+  .then(json)
+  .then(function(data) {
+    var roadDetailsStr = findRoadDetails(data);
+    document.getElementById("Montexte").innerHTML = roadDetailsStr;
+  }).catch(function(error) {
+    console.log('Request failed', error);
+  });
+}
+function status(response) {
+  if (response.status >= 200 && response.status < 300) {
+    return Promise.resolve(response)
+  } else {
+    return Promise.reject(new Error(response.statusText))
+  }
+}
+function json(response) {
+  return response.json()
+}
+function createOsmURL(){
+  var opQuery= buildOverpassQuery();
+  var baseURL = "https://lz4.overpass-api.de/api/interpreter";
+  var query = '?data=[out:json][timeout:15];(' + opQuery + ');out;';
+  var finalURL = baseURL + query;
+  return finalURL;
+}
 
+function buildOverpassQuery() {
+	var lat = document.getElementById("lat").value;
+  	var lon = document.getElementById("lon").value;
+  	var qLQuery = "way(around:5," + lat + "," + lon + ")[\"highway\"!~\"path|track|cycleway|footway\"];(._;>;);";
+    return qLQuery;
+}
+
+function findRoadDetails(data) {
+	var elementsArray = data.elements;
+	for (var i in elementsArray) {
+		var element = elementsArray[i];
+		if ( element.type == "way") {
+			return element.tags.highway;
+		}
+	}
+	return "pas de route trouvée";
+}
+
+</script>
+</head>
+<body>
+<span>lat:</span><span><input type="text" id="lat" value="43.943144"/></span>
+<span>lon:</span><span><input type="text" id="lon" value="4.811832"/></span>
+<button  type="button" onclick="getOSMData()">Valider</button>
+<p id ="Montexte"/>
+</body>
+</html>

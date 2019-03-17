@@ -1,0 +1,331 @@
+{
+	"associations": [
+		{
+			"code-owm": 200,
+			"label-own": "thunderstorm with light rain",
+			"code-bdac": 2,
+			"label-bdac": "pluie légère"
+		},
+		{
+			"code-owm": 201,
+			"label-own": "thunderstrom with rain",
+			"code-bdac": 2,
+			"label-bdac": "pluie légère"
+		},
+		{
+			"code-owm": 202,
+			"label-own": "thunderstorm with heavy rain",
+			"code-bdac": 3,
+			"label-bdac": "pluie forte"
+		},
+		{
+			"code-owm": 210,
+			"label-own": "light thunderstorm",
+			"code-bdac": 8,
+			"label-bdac": "temps couvert"
+		},
+		{
+			"code-owm": 211,
+			"label-own": "thunderstorm",
+			"code-bdac": 8,
+			"label-bdac": "temps couvert"
+		},
+		{
+			"code-owm": 212,
+			"label-own": "heavy thunderstorm",
+			"code-bdac": 8,
+			"label-bdac": "pluie forte"
+		},
+		{
+			"code-owm": 221,
+			"label-own": "ragged thunderstorm",
+			"code-bdac": 8,
+			"label-bdac": "temps couvert"
+		},
+		{
+			"code-owm": 230,
+			"label-own": "thunderstorm with light drizzle",
+			"code-bdac": 2,
+			"label-bdac": "pluie légère"
+		},
+		{
+			"code-owm": 231,
+			"label-own": "thunderstorm with drizzle",
+			"code-bdac": 2,
+			"label-bdac": "pluie légère"
+		},
+		{
+			"code-owm": 232,
+			"label-own": "thunderstorm with heavy drizzle",
+			"code-bdac": 3,
+			"label-bdac": "pluie forte"
+		},
+		{
+			"code-owm": 300,
+			"label-own": "light intensity drizzle",
+			"code-bdac": 2,
+			"label-bdac": "pluie légère"
+		},
+		{
+			"code-owm": 301,
+			"label-own": "drizzle",
+			"code-bdac": 2,
+			"label-bdac": "pluie légère"
+		},
+		{
+			"code-owm": 302,
+			"label-own": "heavy intensity drizzle",
+			"code-bdac": 5,
+			"label-bdac": "Brouillard – fumée"
+		},
+		{
+			"code-owm": 310,
+			"label-own": "light intensity drizzle rain",
+			"code-bdac": 2,
+			"label-bdac": "pluie légère"
+		},
+		{
+			"code-owm": 311,
+			"label-own": "drizzle rain",
+			"code-bdac": 2,
+			"label-bdac": "pluie légère"
+		},
+		{
+			"code-owm": 312,
+			"label-own": "heavy intensity drizzle rain",
+			"code-bdac": 3,
+			"label-bdac": "pluie forte"
+		},
+		{
+			"code-owm": 313,
+			"label-own": "shower rain and drizzle",
+			"code-bdac": 2,
+			"label-bdac": "pluie légère"
+		},
+		{
+			"code-owm": 314,
+			"label-own": "heavy shower rain and drizzle",
+			"code-bdac": 2,
+			"label-bdac": "pluie légère"
+		},
+		{
+			"code-owm": 321,
+			"label-own": "shower drizzle",
+			"code-bdac": 2,
+			"label-bdac": "pluie légère"
+		},
+		{
+			"code-owm": 500,
+			"label-own": "light rain",
+			"code-bdac": 2,
+			"label-bdac": "pluie légère"
+		},
+		{
+			"code-owm": 501,
+			"label-own": "moderate rain",
+			"code-bdac": 2,
+			"label-bdac": "pluie légère"
+		},
+		{
+			"code-owm": 502,
+			"label-own": "heavy intensity rain",
+			"code-bdac": 3,
+			"label-bdac": "pluie forte"
+		},
+		{
+			"code-owm": 503,
+			"label-own": "very heavy rain",
+			"code-bdac": 3,
+			"label-bdac": "pluie forte"
+		},
+		{
+			"code-owm": 504,
+			"label-own": "extreme rain",
+			"code-bdac": 3,
+			"label-bdac": "pluie forte"
+		},
+		{
+			"code-owm": 511,
+			"label-own": "freezing rain",
+			"code-bdac": 4,
+			"label-bdac": "Neige – grêle"
+		},
+		{
+			"code-owm": 520,
+			"label-own": "light intensity shower rain",
+			"code-bdac": 2,
+			"label-bdac": "pluie légère"
+		},
+		{
+			"code-owm": 521,
+			"label-own": "shower rain",
+			"code-bdac": 2,
+			"label-bdac": "pluie légère"
+		},
+		{
+			"code-owm": 522,
+			"label-own": "heavy intensity shower rain",
+			"code-bdac": 3,
+			"label-bdac": "pluie forte"
+		},
+		{
+			"code-owm": 531,
+			"label-own": "ragged shower rain",
+			"code-bdac": 3,
+			"label-bdac": "pluie forte"
+		},
+		{
+			"code-owm": 600,
+			"label-own": "light snow",
+			"code-bdac": 4,
+			"label-bdac": "Neige – grêle"
+		},
+		{
+			"code-owm": 601,
+			"label-own": "snow",
+			"code-bdac": 4,
+			"label-bdac": "Neige – grêle"
+		},
+		{
+			"code-owm": 602,
+			"label-own": "heavy snow",
+			"code-bdac": 4,
+			"label-bdac": "Neige – grêle"
+		},
+		{
+			"code-owm": 611,
+			"label-own": "sleet",
+			"code-bdac": 4,
+			"label-bdac": "Neige – grêle"
+		},
+		{
+			"code-owm": 612,
+			"label-own": "shower sleet",
+			"code-bdac": 4,
+			"label-bdac": "Neige – grêle"
+		},
+		{
+			"code-owm": 615,
+			"label-own": "light rain and snow",
+			"code-bdac": 4,
+			"label-bdac": "Neige – grêle"
+		},
+		{
+			"code-owm": 616,
+			"label-own": "rain and snow",
+			"code-bdac": 4,
+			"label-bdac": "Neige – grêle"
+		},
+		{
+			"code-owm": 620,
+			"label-own": "light shower snow",
+			"code-bdac": 4,
+			"label-bdac": "Neige – grêle"
+		},
+		{
+			"code-owm": 621,
+			"label-own": "shower snow",
+			"code-bdac": 4,
+			"label-bdac": "Neige – grêle"
+		},
+		{
+			"code-owm": 622,
+			"label-own": "heavy shower snow",
+			"code-bdac": 4,
+			"label-bdac": "Neige – grêle"
+		},
+		{
+			"code-owm": 701,
+			"label-own": "mist",
+			"code-bdac": 5,
+			"label-bdac": "Brouillard – fumée"
+		},
+		{
+			"code-owm": 711,
+			"label-own": "smoke",
+			"code-bdac": 5,
+			"label-bdac": "Brouillard – fumée"
+		},
+		{
+			"code-owm": 721,
+			"label-own": "haze",
+			"code-bdac": 5,
+			"label-bdac": "Brouillard – fumée"
+		},
+		{
+			"code-owm": 731,
+			"label-own": "sand, dust whirls",
+			"code-bdac": 9,
+			"label-bdac": "autre"
+		},
+		{
+			"code-owm": 741,
+			"label-own": "fog",
+			"code-bdac": 5,
+			"label-bdac": "Brouillard – fumée"
+		},
+		{
+			"code-owm": 751,
+			"label-own": "sand",
+			"code-bdac": 5,
+			"label-bdac": "Brouillard – fumée"
+		},
+		{
+			"code-owm": 761,
+			"label-own": "dust",
+			"code-bdac": 5,
+			"label-bdac": "Brouillard – fumée"
+		},
+		{
+			"code-owm": 762,
+			"label-own": "volcanic ash",
+			"code-bdac": 9,
+			"label-bdac": "autre"
+		},
+		{
+			"code-owm": 771,
+			"label-own": "squalls",
+			"code-bdac": 6,
+			"label-bdac": "vent fort – tempête"
+		},
+		{
+			"code-owm": 781,
+			"label-own": "tornado",
+			"code-bdac": 6,
+			"label-bdac": "vent fort – tempête"
+		},
+		{
+			"code-owm": 800,
+			"label-own": "clear",
+			"code-bdac": 1,
+			"label-bdac": "normale"
+		},
+		{
+			"code-owm": 801,
+			"label-own": "few clouds",
+			"code-bdac": 1,
+			"label-bdac": "normale"
+		},
+		{
+			"code-owm": 802,
+			"label-own": "scattered clouds",
+			"code-bdac": 1,
+			"label-bdac": "normale"
+		},
+		{
+			"code-owm": 803,
+			"label-own": "broken clouds",
+			"code-bdac": 8,
+			"label-bdac": "temps couvert"
+		},
+		{
+			"code-owm": 804,
+			"label-own": "overcast clouds",
+			"code-bdac": 8,
+			"label-bdac": "temps couvert"
+		}
+
+
+
+	]
+}

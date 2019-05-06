@@ -59,3 +59,57 @@ function findRoadDetails(data) {
 <p id ="Montexte"/>
 </body>
 </html>
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Projet_accidentologie</title>
+	<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<style type="text/css">
+		.rounded-circle.change-area {
+		    height: 200px;
+		    width: 200px;
+		    background: green;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-6 left-pane">
+				<div class="row">
+					<input type="text" id="coefficient-value" name="" class="form-control" placeholder="Please Enter the value">
+				</div>
+				<div class="row">
+					<button class=".btn-default" onclick="changecolor()" id="click-button">Click Here</button>
+				</div>
+			</div>
+			<div class="col-md-6 right-pane">
+				<div class="rounded-circle change-area"></div>
+			</div>
+		</div>
+	</div>
+<script
+  src="https://code.jquery.com/jquery-3.4.0.min.js"
+  integrity="sha256-BJeo0qm959uMBGb65z40ejJYGSgR7REI4+CW1fNKwOg="
+  crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<script type="text/javascript">
+	function changecolor(){
+		var cValue = $('#coefficient-value').val();
+		if(cValue != ""){
+			if(cValue <= 4){
+				$('.change-area').css('background', 'green');
+			}else if(cValue > 4 && cValue <=7){
+				$('.change-area').css('background', 'blue');
+			}
+			else if(cValue > 7 && cValue <=10){
+				$('.change-area').css('background', 'red');
+			}
+		}
+	}
+</script>
+</body>
+</html>

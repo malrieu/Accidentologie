@@ -2,11 +2,13 @@ function getOWMData() {
   var x = $('#fname').val();
   var url = "http://api.openweathermap.org/data/2.5/weather?q="+x+"&appid=619926166e0fec5599764d969162ab1f";
   $.get(url, function(data) {
-    var jData = JSON.parse(data);
-    var owmId = jData.weather[0].id;
-    var url = "/" + owmId + "/correspondances";
+    console.log("data OWM: ", data)
+    // var jData = JSON.parse(data);
+    var owmId = data.weather[0].id;
+    var url = "/correspondance" + "?id="+owmId;
+    console.log("url: ", url)
     $.get(url, function(data_bdd){
-      $('#Montexte').append(data_bdd);
+      $('#Montexte').html(data_bdd);
 
     }).fail(function() {
       console.log('Request failed', error);

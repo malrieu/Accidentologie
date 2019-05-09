@@ -1,0 +1,88 @@
+{
+	"associationsOSM": [
+		{
+			"label-osm": "motorway",
+			"code-bdac": 1,
+			"label-bdac": "autoroute"
+		},
+		{
+			"label-osm": "trunk",
+			"code-bdac": 1,
+			"label-bdac": "autoroute"
+		},
+		{
+			"label-osm": "primary",
+			"code-bdac": 2,
+			"label-bdac": "route nationale"
+		},
+		{
+			"label-osm": "secondary",
+			"code-bdac": 3,
+			"label-bdac": "route départementale"
+		},
+		{
+			"label-osm": "tertiary",
+			"code-bdac": 3,
+			"label-bdac": "route départementale"
+		},
+		{
+			"label-osm": "unclassified",
+			"code-bdac": 5,
+			"label-bdac": "hors réseau public"
+		},
+		{
+			"label-osm": "residential",
+			"code-bdac": 4,
+			"label-bdac": "voie communale"
+		},
+		{
+			"label-osm": "living_street",
+			"code-bdac": 4,
+			"label-bdac": "voie communale"
+		},
+		{
+			"label-osm": "service",
+			"code-bdac": 6,
+			"label-bdac": "parc de stationnement à la circulation publique"
+		},
+		{
+			"label-osm": "track",
+			"code-bdac": 9,
+			"label-bdac": "autre"
+		},
+		{
+			"label-osm": "pedestrian",
+			"code-bdac": 9,
+			"label-bdac": "autre"
+		},
+		{
+			"label-osm": "motorway_link",
+			"code-bdac": 1,
+			"label-bdac": "autoroute"
+		},
+		{
+			"label-osm": "trunk_link",
+			"code-bdac": 1,
+			"label-bdac": "autoroute"
+		},
+		{
+			"label-osm": "primary_link",
+			"code-bdac": 2,
+			"label-bdac": "route nationale"
+		},
+		{
+			"label-osm": "secondary_link",
+			"code-bdac": 3,
+			"label-bdac": "route départementale"
+		},
+		{
+			"label-osm": "tertiary_link",
+			"code-bdac": 3,
+			"label-bdac": "route départementale"
+		}
+
+
+
+
+	]
+}

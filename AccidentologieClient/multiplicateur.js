@@ -48,11 +48,16 @@ function findRoadDetails(data) {
 			return element.tags.highway;
 		}
 	}
-	return "pas de route trouvée";
+	return "pas de route trouvee";
 }
 
 function getOWMData(roadDetailsStr) {
-  //var x = document.getElementById("fname").value;
+  var meteo = document.getElementById("meteo").value;
+  if (meteo != 0) {
+    var myMult = getMultiplier(roadDetailsStr,meteo);
+  }
+  else {
+  
   var myPos = navigator.geolocation.getCurrentPosition;
   var url;
   if (myPos.coords)
@@ -71,6 +76,7 @@ function getOWMData(roadDetailsStr) {
     console.log('Request failed', error);
   });
 }
+}
 
 function getMultiplier(catrCode,weatherCode) {
     var multiplierServiceUrl = "http://nat-srvperso-referjpm.univ-avignon.fr:8095/multiplier?catr="+catrCode+"&meteo="+weatherCode;
@@ -79,9 +85,15 @@ function getMultiplier(catrCode,weatherCode) {
     .then(json)
     .then(function(data) {
     var multiplier =  data.multiplier;
-    document.getElementById("multiplierID").innerHTML = multiplier;
-    // to do show it in a fancy way
+    document.getElementById("multiplicateur").innerHTML = multiplier;
+    var nMult = Number(multiplier);
+    var red = 25*nMult;
+    var green = 255-25*nMult;
+    var backGroundColor = "rgb("+Math.round(red)+","+Math.round(green)+",0)";
+    document.getElementById("circle").innerHTML = Math.round(multiplier*10)/10;
+    document.getElementById("circle").style.backgroundColor=backGroundColor;
   }).catch(function(error) {
+    document.getElementById("multiplicateur").innerHTML = "Le service ne repond pas :-(";
     console.log('Request failed', error);
   });
 }
@@ -196,6 +208,8 @@ function getWeatherCode(codeID) {
             return 8;
         case  804:
             return 8;
+        default:
+            return 5;
     }
 }
 
@@ -233,6 +247,8 @@ function getWeatherCode(codeID) {
             return 3;
         case  "tertiary_link" :
             return 3;
+        default : 
+            return 2;
     }
   }
 

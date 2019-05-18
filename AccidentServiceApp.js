@@ -32,7 +32,11 @@ app.get('/', function(req, res){
 app.get('/multiplier', function(req, res){
   var catr = req.query.catr;
   var meteo = req.query.meteo;
-  getMultiplierStrAndSend(catr,meteo,res);
+  var response = "";
+  if ( catr != null && isCorrectCatrCode(catr) )
+    
+    response = getMultiplierStrAndSend(catr,meteo,res);
+  
   });
 
 // this function calculates the multiplier and sends the response in json format
@@ -75,7 +79,20 @@ function initCache(cache) {
 		cache.nbKmForAverageRiskRouteCategory = nbKm;
    });
 }
-  
+
+function isCorrectCatrCode(catrCode) {
+  if ( !isNaN(catrCode) && 0 < catrCode && catrCode < 6 )
+    return true;
+  else
+    return false;
+}
+
+function isCorrectMeteoCode(meteoCode) {
+  if ( !isNaN(meteoCode) && 0 < meteoCode && meteoCode < 9 )
+    return true;
+  else
+    return false;
+}
 
 //listen for request on port 3000
 app.listen(3000);

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="multiplier.js"></script>
+</head>
+<body>
+    <span>lat:</span><span><input type="text" id="lat" value="43.943144"/></span>
+    <span>lon:</span><span><input type="text" id="lon" value="4.811832"/></span>
+    <div>
+        <span>météo:</span><span><input type="text" id="meteo" value="2"/></span>
+    </div>
+    <div>
+        <select name ="wheather" id="weather">
+            <option value="2">pluie légère</option>
+            <option value="3">pluie forte</option>
+            <option value="8">temps couvert</option>
+            <option value="5">Brouillard – fumée</option>
+            <option value="4">Neige – grêle</option>
+            <option value="9">autre</option>
+            <option value="6">vent fort – tempête</option>
+            <option value="1">normale</option>
+        </select>
+    </div>
+<button  type="button" onclick="getMultiplicateurFromServices()">Multiplicateur</button>
+<p id ="multiplicateur"></p>
+<div id="circle" style = "width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    font-size: 50px;
+    color:red;
+    line-height: 200px;
+    text-align: center;
+    background: #000">ok</div>
+</body>
+</html>

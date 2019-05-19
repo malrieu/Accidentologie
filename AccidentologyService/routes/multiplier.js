@@ -29,7 +29,6 @@ function getMultiplierStrAndSend(catr,meteo,res) {
                 //jsonRes = jsonRes + "{\"catrMultiplier \" : " + catrMultiplier;
                 multiplierObject.contributions.catrMultiplier = catrMultiplier;
                 if (meteo != null && isCorrectMeteoCode(meteo)) {
-                    console.log("meteo valid");
                     var sqlAccForMeteoQueryStr = "SELECT COUNT( `Num_Acc` ) AS `nb_accidents` , `atm` FROM `cara` WHERE `atm` =" + meteo;
                     var sqlKmForMeteoQueryStr = "SELECT (`km`) FROM meteo WHERE `meteoCode` = " + meteo;
                     application.con.query(sqlAccForMeteoQueryStr, function (err, result3, fields) {
@@ -56,7 +55,6 @@ function getMultiplierStrAndSend(catr,meteo,res) {
     // No valid catr
     else {
         if (meteo != null && isCorrectMeteoCode(meteo)) {
-            console.log("meteo valid");
             var sqlAccForMeteoQueryStr = "SELECT COUNT( `Num_Acc` ) AS `nb_accidents` , `atm` FROM `cara` WHERE `atm` =" + meteo;
             var sqlKmForMeteoQueryStr = "SELECT (`km`) FROM meteo WHERE `meteoCode` = " + meteo;
             application.con.query(sqlAccForMeteoQueryStr, function (err, result3, fields) {
@@ -71,6 +69,8 @@ function getMultiplierStrAndSend(catr,meteo,res) {
                 });
             });
         }
+        else
+            res.send(JSON.stringify(multiplierObject));
     }
   }
   

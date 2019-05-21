@@ -1,19 +1,26 @@
 
 function getMultiplicateurFromServices() {
     // first let's ask OSM
- var url = createOsmURL();
- fetch(url)
-  .then(status)
-  .then(json)
-  .then(function(data) {
-    var roadDetailsStr = findRoadDetails(data);
-    var catrCode = getCatrCode(roadDetailsStr);
-    // then let's ask OWM, passing it OSM response for convenience
-    getOWMData(catrCode);
-    //document.getElementById("Montexte").innerHTML = roadDetailsStr;
-  }).catch(function(error) {
-    console.log('Request failed', error);
-  });
+    var selectCatr = document.getElementById("road");
+    var catrSelection = selectCatr.options[selectCatr.selectedIndex].value;
+    if ( catrSelection == 0) {
+        var url = createOsmURL();
+        fetch(url)
+        .then(status)
+        .then(json)
+        .then(function(data) {
+            var roadDetailsStr = findRoadDetails(data);
+            var catrCode = getCatrCode(roadDetailsStr);
+            // then let's ask OWM, passing it OSM response for convenience
+            getOWMData(catrCode);
+            //document.getElementById("Montexte").innerHTML = roadDetailsStr;
+        }).catch(function(error) {
+            console.log('Request failed', error);
+        });
+    }
+    else {
+        getOWMData(catrSelection);
+    }
 }
 function status(response) {
   if (response.status >= 200 && response.status < 300) {
@@ -52,28 +59,32 @@ function findRoadDetails(data) {
 }
 
 function getOWMData(roadDetailsStr) {
-  var meteo = document.getElementById("meteo").value;
-  if (meteo != 0) {
-    var myMult = getMultiplier(roadDetailsStr,meteo);
+  var meteoSelectElement = document.getElementById("weather");
+  var meteoSelection = meteoSelectElement.options[meteoSelectElement.selectedIndex].value;
+  if (meteoSelection != 0) {
+    var myMult = getMultiplier(roadDetailsStr,meteoSelection);
   }
   else {
-  
-  var myPos = navigator.geolocation.getCurrentPosition;
-  var url;
-  if (myPos.coords)
-    url = "http://api.openweathermap.org/data/2.5/weather?lat="+myPos.coords.latitude+"&lon"+myPos.coords.longitude+"&appid=619926166e0fec5599764d969162ab1f";
-  else
-    url = "http://api.openweathermap.org/data/2.5/weather?q=Avignon&appid=619926166e0fec5599764d969162ab1f";
+    var myPos = navigator.geolocation.getCurrentPosition;
+    var url;
+    if (myPos.coords)
+        url = "http://api.openweathermap.org/data/2.5/weather?lat="+myPos.coords.latitude+"&lon"+myPos.coords.longitude+"&appid=619926166e0fec5599764d969162ab1f";
+    else
+        url = "http://api.openweathermap.org/data/2.5/weather?q=Avignon&appid=619926166e0fec5599764d969162ab1f";
 
- fetch(url)
-  .then(status)
-  .then(json)
-  .then(function(data) {
-    var weatherID =  data.weather[0].id;
-    var weatherCode = getWeatherCode(weatherID);
-    var multiplier = getMultiplier(roadDetailsStr,weatherCode);
-  }).catch(function(error) {
-    console.log('Request failed', error);
+    fetch(url)
+    .then(status)
+    .then(json)
+    .then(function(data) {
+        var weatherID =  data.weather[0].id;
+        var weatherCode = null;
+        if ( weatherID < 200)
+            weatherCode = weatherID;
+        else
+            var weatherCode = getWeatherCode(weatherID);
+        var multiplier = getMultiplier(roadDetailsStr,weatherCode);
+    }).catch(function(error) {
+        console.log('Request failed', error);
   });
 }
 }
@@ -84,17 +95,20 @@ function getMultiplier(catrCode,weatherCode) {
     .then(status)
     .then(json)
     .then(function(data) {
-    var multiplier =  data.multiplier;
-    document.getElementById("multiplicateur").innerHTML = multiplier;
-    var nMult = Number(multiplier);
-    var red = 25*nMult;
-    var green = 255-25*nMult;
-    var backGroundColor = "rgb("+Math.round(red)+","+Math.round(green)+",0)";
-    document.getElementById("circle").innerHTML = Math.round(multiplier*10)/10;
-    document.getElementById("circle").style.backgroundColor=backGroundColor;
-  }).catch(function(error) {
-    document.getElementById("multiplicateur").innerHTML = "Le service ne repond pas :-(";
-    console.log('Request failed', error);
+        var multiplier =  data.multiplier;
+        document.getElementById("multiplicateur").innerHTML = multiplier;
+        var backGroundColor = "green";
+        if ( multiplier < 1.5 )
+            backGroundColor = "green";
+        else if (multiplier < 3)
+            backGroundColor = "orange";
+        else
+            backGroundColor = "red";
+        document.getElementById("circle").innerHTML = Math.round(multiplier*10)/10;
+        document.getElementById("circle").style.backgroundColor=backGroundColor;
+    }).catch(function(error) {
+        document.getElementById("multiplicateur").innerHTML = "Le service ne repond pas :-(";
+        console.log('Request failed', error);
   });
 }
 
